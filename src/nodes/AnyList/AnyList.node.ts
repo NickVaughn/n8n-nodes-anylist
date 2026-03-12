@@ -326,7 +326,10 @@ export class AnyList implements INodeType {
 			try {
 				if (resource === 'list') {
 					if (operation === 'getAll') {
-						const lists = any.lists;
+						const lists = any.lists.map((list: any) => ({
+							name: list.name,
+							identifier: list.identifier,
+						}));
 						returnData.push(...this.helpers.returnJsonArray(lists));
 					}
 				} else if (resource === 'item') {
