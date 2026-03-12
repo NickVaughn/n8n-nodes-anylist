@@ -1,0 +1,44 @@
+{
+  "name": "n8n-nodes-anylist",
+  "version": "0.1.0",
+  "description": "n8n node for AnyList",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && gulp",
+    "dev": "tsc --watch",
+    "lint": "eslint src --ext .ts",
+    "lintfix": "eslint src --ext .ts --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "author": "Nathan Vaughn",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickVaughn/n8n-nodes-anylist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NickVaughn/n8n-nodes-anylist/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "eslint": "^8.27.0",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "^1.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "anylist": "^0.8.5"
+  },
+  "n8n": {
+    "credentials": [
+      "dist/credentials/AnyListApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/AnyList/AnyList.node.js"
+    ]
+  }
+}
