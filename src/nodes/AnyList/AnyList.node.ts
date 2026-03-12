@@ -373,7 +373,7 @@ export class AnyList implements INodeType {
 					}
 				} else if (resource === 'mealPlan') {
 					if (operation === 'getAll') {
-						const events = await any.getMealPlanEvents();
+						const events = await any.getMealPlanningCalendarEvents();
 						returnData.push(...this.helpers.returnJsonArray(events));
 					} else if (operation === 'add') {
 						const title = this.getNodeParameter('title', i) as string;
